@@ -21,5 +21,12 @@ sudo git clone https://github.com/roots/bedrock.git
 #Move html folder to web folder in bedrock
 sudo cp -a /var/www/html /var/www/bedrock/web
 
-#Removes $USER as privelaged user
+#Sets $USER as privelaged user
 sudo chown -R www-data /var/www/html
+
+#Sets /usr/ folder to $USER
+sudo chown -r freudend /usr
+
+#Changes index in openlitespeed
+$ echo "docRoot                   /var/www/html/" | sed 's+/var/www/html/+/var/www/bedrock/web/+g'
+docRoot                   /var/www/bedrock/web/
