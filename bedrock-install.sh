@@ -14,7 +14,7 @@ FILENAME_ENV="/var/www/bedrock/.env"
 sudo rm -r -f /var/www/bedrock
 
 #Sets permissions
-sudo chown -R $USER /var/www/
+sudo chown -R $USER /var/www
 sudo chown -R $USER /usr/local/lsws/conf
 sudo chown -R $USER /usr/local/lsws/conf
 
@@ -45,5 +45,5 @@ sudo wget -O $GITHUB_ENV >> $FILENAME_ENV
 #--- END ---
 
 #Set owner back to www-data
-sudo chown -R www-data /var/www/
+sudo chown -R www-data /var/www
 sudo chown -R www-data /usr/local/lsws/conf
