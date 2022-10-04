@@ -1,6 +1,7 @@
 #!/bin/bash
 USER="freudend"
 HOME_URL="http://35.204.12.50"
+GITHUB_ENV="https://raw.githubusercontent.com/deinfreu/openlitespeed-wordpress-bedrock/main/.env"
 
 #updates packages
 sudo apt update
@@ -30,7 +31,7 @@ sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/-+g' /usr/local/lsws/
 
 cd~
 cd /var/www/bedrock
-wget -O .env https://github.com/deinfreu/openlitespeed-wordpress-bedrock/raw/main/.env
+sudo wget $GITHUB_ENV >> .env
 
 #--- END ---
 
