@@ -1,0 +1,1 @@
+# openlitespeed-wordpress-bedrock
