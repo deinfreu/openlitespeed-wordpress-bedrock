@@ -14,6 +14,7 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 composer
 
 #Install bedrock in /var/www/html
+cd ~
 cd /var/www/html
 sudo composer create-project roots/bedrock
 yes
