@@ -16,4 +16,5 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 cd /var/www
 sudo git clone https://github.com/roots/bedrock.git
 
-sudo mv /var/www/html /var/www/bedrock/web
+#Move html folder to web folder in bedrock
+sudo mv /var/www/html /var/www/bedrock/web/
