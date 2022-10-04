@@ -31,15 +31,23 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 cd /var/www
 sudo git clone https://github.com/roots/bedrock.git
 
+#Sets permissions
+sudo chown -R $USER /var/www/bedrock
+
 #Move html folder to web folder in bedrock
 sudo cp -a /var/www/html /var/www/bedrock/web
 
 #Changes index in openlitespeed
 sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/-+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
 
+#Download .env file to bedrock directory
 cd ~
 cd /var/www/bedrock
 sudo wget $GITHUB_ENV -P /var/www/bedrock
+
+echo VAR2=`sed -n 's/^VAR2=\(.*\)/\1/p' < txt`
+
+
 
 #--- END ---
 
