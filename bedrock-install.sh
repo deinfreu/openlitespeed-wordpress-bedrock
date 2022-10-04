@@ -19,7 +19,7 @@ cd /var/www
 sudo git clone https://github.com/roots/bedrock.git
 
 #Move html folder to web folder in bedrock
-sudo cp -a /var/www/html /var/www/bedrock/web/
+sudo cp -a /var/www/html /var/www/bedrock/web
 
 #Removes $USER as privelaged user
 sudo chown -R www-data /var/www/html
