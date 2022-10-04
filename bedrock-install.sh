@@ -1,6 +1,5 @@
 #!/bin/bash
-
-VAR1="VAR1"
+USER="freudend"
 
 #updates packages
 sudo apt update
@@ -12,9 +11,15 @@ curl -s https://getcomposer.org/installer -o /tmp/composer-setup.php
 #Install composer globally
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
+#Makes $USER privelaged user 
+sudo chown -R $USER /var/www/html
+
 #Install bedrock in /var/www/html
 cd /var/www
 sudo git clone https://github.com/roots/bedrock.git
 
 #Move html folder to web folder in bedrock
 sudo cp -a /var/www/html /var/www/bedrock/web/
+
+#Removes $USER as privelaged user
+sudo chown -R www-data /var/www/html
