@@ -31,7 +31,7 @@ sudo chown -R freudend /usr/local/lsws/conf
 #Changes index in openlitespeed
 sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/-+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
 
-# --- END ---
+#--- END ---
 
 #Sets /usr/ folder permission back to www-data
 sudo chown -R www-data /usr/local/lsws/conf
