@@ -22,16 +22,18 @@ sudo git clone https://github.com/roots/bedrock.git
 #Move html folder to web folder in bedrock
 sudo cp -a /var/www/html /var/www/bedrock/web
 
-#Sets $USER as privelaged user
-sudo chown -R www-data /var/www/html
-
 #Sets /usr/ folder to $USER
 sudo chown -R freudend /usr/local/lsws/conf
 
 #Changes index in openlitespeed
 sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/-+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
 
+cd~
+cd /var/www/bedrock
+wget -O .env https://github.com/deinfreu/openlitespeed-wordpress-bedrock/raw/main/.env
+
 #--- END ---
 
-#Sets /usr/ folder permission back to www-data
+#Set owner back to www-data
+sudo chown -R www-data /var/www/html
 sudo chown -R www-data /usr/local/lsws/conf
