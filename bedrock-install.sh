@@ -1,5 +1,7 @@
 #!/bin/bash
 
+VAR1="VAR1"
+
 #updates packages
 sudo apt update
 
@@ -13,3 +15,5 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 #Install bedrock in /var/www/html
 cd /var/www
 sudo git clone https://github.com/roots/bedrock.git
+
+sudo mv /var/www/html /var/www/bedrock/web
