@@ -15,4 +15,3 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 cd ~
 cd /var/www/html
 sudo composer create-project roots/bedrock
-yes
