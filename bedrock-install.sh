@@ -1,6 +1,12 @@
 #!/bin/bash
+
+#Your ssh username
 USER="freudend"
+
+#Your domain name or ip adres
 HOME_URL="http://35.204.12.50"
+
+#DONT ALTER it's for the script
 GITHUB_ENV="https://raw.githubusercontent.com/deinfreu/openlitespeed-wordpress-bedrock/main/.env"
 FILENAME_ENV=".env"
 
@@ -21,9 +27,6 @@ curl -s https://getcomposer.org/installer -o /tmp/composer-setup.php
 
 #Install composer globally
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
-
-#Makes $USER privelaged user 
-sudo chown -R $USER /var/www/html
 
 #Install bedrock in /var/www/html
 cd /var/www
