@@ -25,7 +25,7 @@ sudo cp -a /var/www/html /var/www/bedrock/web
 sudo chown -R www-data /var/www/html
 
 #Sets /usr/ folder to $USER
-sudo chown -r freudend /usr
+sudo chown -r freudend /usr/local/lsws/conf
 
 #Changes index in openlitespeed
 $ echo "docRoot                   /var/www/html/" | sed 's+/var/www/html/+/var/www/bedrock/web/+g'
