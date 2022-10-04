@@ -1,5 +1,6 @@
 #!/bin/bash
 USER="freudend"
+HOME_URL="http://35.204.12.50"
 
 #updates packages
 sudo apt update
@@ -28,5 +29,11 @@ sudo chown -R www-data /var/www/html
 sudo chown -R freudend /usr/local/lsws/conf
 
 #Changes index in openlitespeed
-echo "docRoot                   /var/www/html/" | sudo sed 's+/var/www/html/+/var/www/bedrock/web/+g'
-docRoot                   /var/www/bedrock/web/
+sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
+
+sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
+
+# --- END ---
+
+#Sets /usr/ folder permission back to www-data
+sudo chown -R www-data /usr/local/lsws/conf
