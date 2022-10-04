@@ -28,5 +28,5 @@ sudo chown -R www-data /var/www/html
 sudo chown -R freudend /usr/local/lsws/conf
 
 #Changes index in openlitespeed
-$ echo "docRoot                   /var/www/html/" | sed 's+/var/www/html/+/var/www/bedrock/web/+g'
+echo "docRoot                   /var/www/html/" | sudo sed 's+/var/www/html/+/var/www/bedrock/web/+g'
 docRoot                   /var/www/bedrock/web/
