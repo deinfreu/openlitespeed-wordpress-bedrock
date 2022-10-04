@@ -17,4 +17,5 @@ cd /var/www
 sudo git clone https://github.com/roots/bedrock.git
 
 #Move html folder to web folder in bedrock
-sudo mv /var/www/html /var/www/bedrock/web/
+cp -a /var/www/html /var/www/bedrock/web/
+sudo rm -r -f /var/www/bedrock/web/
