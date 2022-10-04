@@ -8,13 +8,13 @@ HOME_URL="http://35.204.12.50"
 
 #DONT ALTER it's for the script
 GITHUB_ENV="https://raw.githubusercontent.com/deinfreu/openlitespeed-wordpress-bedrock/main/.env"
-FILENAME_ENV=".env"
+FILENAME_ENV="/var/www/bedrock/.env"
 
 #Removes previous bedrock install
 sudo rm -r -f /var/www/bedrock
 
 #Sets permissions
-sudo chown -R $USER /var/www/html
+sudo chown -R $USER /var/www/
 sudo chown -R $USER /usr/local/lsws/conf
 sudo chown -R $USER /usr/local/lsws/conf
 
@@ -40,10 +40,10 @@ sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/-+g' /usr/local/lsws/
 
 cd ~
 cd /var/www/bedrock
-sudo wget $GITHUB_ENV >> $FILENAME_ENV
+sudo wget -O $GITHUB_ENV >> $FILENAME_ENV
 
 #--- END ---
 
 #Set owner back to www-data
-sudo chown -R www-data /var/www/html
+sudo chown -R www-data /var/www/
 sudo chown -R www-data /usr/local/lsws/conf
