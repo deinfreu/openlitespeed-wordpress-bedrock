@@ -44,10 +44,13 @@ sudo cp -a /var/www/html /var/www/bedrock/web
 sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
 
 #Download .env file to bedrock directory
-cd ~ && cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
+cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
 
 #Install wp CLI
-composer require wp-cli/wp-cli
+cd /var/www/bedrock && composer require wp-cli/wp-cli
+
+#shows wordpress info
+wp -info
 
 #--- END SCRIPT ---
 
