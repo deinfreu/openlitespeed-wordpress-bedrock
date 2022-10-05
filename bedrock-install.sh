@@ -54,7 +54,7 @@ php wp-cli.phar --info
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 
-./vendor/wp-cli plugin list --path=wp --url=$HOME_URL/bedrock/wp
+cd /var/www/bedrock && ./vendor/wp-cli plugin list --path=wp --url=$HOME_URL/bedrock/wp
 
 #shows wordpress info
 wp -info
