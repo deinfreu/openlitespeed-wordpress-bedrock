@@ -4,10 +4,12 @@ Installs bedrock on a openlitespeed wordperss installation
 
 ## Description
 
+! I used a clean install of the google cloud openlitespeed-wordpress image to test this script.
+
 This script automaticly downloads roots/bedrock and puts the current wordpress install folder in the wp folder in bedrock. After installation and moving the script enables usage of WP-CLI inside of the wordpress bedrock installation 
 
-Things on the list
-- Take current wp database password and use it in .env
+Todo:
+- Take current wp database password and copy it to the .env
 
 ## Getting Started
 
@@ -26,6 +28,8 @@ Things on the list
 * Wp-CLi
 
 ### Installing
+
+!! ONLY USE THIS ON A DEVELOPMENT SERVER AND CHANGE THE SCRIPT TO FIT YOUR INSTALLATION.
 
 * Fork this repo
 * change to your variables in the bedrock-install.sh file and the .env file
