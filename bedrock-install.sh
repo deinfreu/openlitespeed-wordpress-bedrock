@@ -48,6 +48,12 @@ cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
 
 #Install wp CLI
 cd /var/www/bedrock && composer require wp-cli/wp-cli
+cd /var/www/bedrock && composer install
+
+cd /var/www/bedrock && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+php wp-cli.phar --info
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
 
 #shows wordpress info
 wp -info
