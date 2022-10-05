@@ -56,6 +56,8 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 
 cd /var/www/bedrock && ./vendor/wp-cli plugin list --path=wp --url=$HOME_URL/bedrock/wp
 
+sudo chown -R freudend /usr/local/bin
+
 #shows wordpress info
 wp -info
 
