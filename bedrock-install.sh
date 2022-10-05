@@ -46,6 +46,9 @@ sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/+g' /usr/local/lsws/c
 #Download .env file to bedrock directory
 cd ~ && cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
 
+#Install wp CLI
+composer require wp-cli/wp-cli
+
 #--- END SCRIPT ---
 
 #Set owner back to www-data
