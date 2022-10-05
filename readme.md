@@ -54,7 +54,12 @@ ex. [@deinfreu](https://www.instagram.com/deinfreundnl)
 * 0.1
     * Initial Release - Proof of concept
 
+## Other plugins
+
+Also take a look at these uself plugins
+* [jonbp/wp-cli-sync](https://github.com/jonbp/wp-cli-sync)
+
 ## Acknowledgments
 
 Inspiration
-* [openlitespeed-mariadb-php72-bedrock-sage](https://github.com/bvisible/openlitespeed-mariadb-php72-bedrock-sage/blob/master/README.md)
+* [bvsisible/openlitespeed-mariadb-php72-bedrock-sage](https://github.com/bvisible/openlitespeed-mariadb-php72-bedrock-sage)
