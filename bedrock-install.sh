@@ -20,15 +20,13 @@ sudo chown -R $USER /usr/local/lsws/conf
 sudo apt update
 
 #Install composer
-cd ~
-curl -s https://getcomposer.org/installer -o /tmp/composer-setup.php
+cd ~ && curl -s https://getcomposer.org/installer -o /tmp/composer-setup.php
 
 #Install composer globally
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 #Install bedrock in /var/www/html
-cd /var/www
-sudo git clone https://github.com/roots/bedrock.git
+cd /var/www && sudo git clone https://github.com/roots/bedrock.git
 
 #Sets permissions
 sudo chown -R $USER /var/www/bedrock
@@ -41,8 +39,7 @@ sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/-+g' /usr/local/lsws/
 
 #Download .env file to bedrock directory
 cd ~
-cd /var/www/bedrock
-sudo wget $GITHUB_ENV -P /var/www/bedrock
+cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
 
 #installs bedrock composer
 cd /var/www/bedrock && composer install
