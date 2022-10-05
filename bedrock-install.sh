@@ -1,10 +1,13 @@
 #!/bin/bash
 
+#---CONFIG---
+
 #Your ssh username
 USER="freudend"
 
-#Your domain name or ip adres
-HOME_URL="http://35.204.12.50"
+#--- PREPARE WORDPRESS ---
+
+#---START SCRIPT---
 
 #DONT ALTER it's for the script
 GITHUB_ENV="https://raw.githubusercontent.com/deinfreu/openlitespeed-wordpress-bedrock/main/.env"
@@ -31,22 +34,23 @@ cd /var/www && sudo git clone https://github.com/roots/bedrock.git
 #Sets permissions
 sudo chown -R $USER /var/www/bedrock
 
-#Move html folder to web folder in bedrock
+#updates bedrock composer
+cd /var/www/bedrock && composer install
+
+#Move current index html folder to web folder in bedrock
 sudo cp -a /var/www/html /var/www/bedrock/web
 
 #Changes index in openlitespeed
-sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/-+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
+sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
 
 #Download .env file to bedrock directory
-cd ~
-cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
+cd ~ && cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
 
-#installs bedrock composer
-cd /var/www/bedrock && composer install
-
-#--- END ---
+#--- END SCRIPT ---
 
 #Set owner back to www-data
 sudo chown -R www-data /var/www
 sudo chown -R www-data /var/www/bedrock
 sudo chown -R www-data /usr/local/lsws/conf
+
+#--- END ---
