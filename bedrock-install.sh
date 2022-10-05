@@ -15,7 +15,6 @@ sudo rm -r -f /var/www/bedrock
 #Sets permissions
 sudo chown -R $USER /var/www
 sudo chown -R $USER /usr/local/lsws/conf
-sudo chown -R $USER /usr/local/lsws/conf
 
 #updates packages
 sudo apt update
@@ -45,12 +44,12 @@ cd ~
 cd /var/www/bedrock
 sudo wget $GITHUB_ENV -P /var/www/bedrock
 
-echo VAR2=`sed -n 's/^VAR2=\(.*\)/\1/p' < txt`
-
-
+#installs bedrock composer
+cd /var/www/bedrock && composer install
 
 #--- END ---
 
 #Set owner back to www-data
 sudo chown -R www-data /var/www
+sudo chown -R www-data /var/www/bedrock
 sudo chown -R www-data /usr/local/lsws/conf
