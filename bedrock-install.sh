@@ -4,6 +4,7 @@
 
 #Your ssh username
 USER="freudend"
+HOME_URL="http://34.65.179.44"
 
 #---START SCRIPT---
 
@@ -35,16 +36,16 @@ sudo chown -R $USER /var/www/bedrock
 #updates bedrock composer
 cd /var/www/bedrock && composer install
 
-#Move current index html folder to web folder in bedrock
+#Move current wordpress install folder to web folder in bedrock
 sudo cp -a /var/www/html /var/www/bedrock/web
 
-#Changes index in openlitespeed
+#Changes index directory in openlitespeed wordpress virtualhost
 sudo sed -i -e 's+/var/www/html/+/var/www/bedrock/web/html/+g' /usr/local/lsws/conf/vhosts/wordpress/vhconf.conf
 
 #Download .env file to bedrock directory
 cd /var/www/bedrock && sudo wget $GITHUB_ENV -P /var/www/bedrock
 
-#Install wp CLI
+#Install wp CLI in bedrock directory and 
 cd /var/www/bedrock && composer require wp-cli/wp-cli
 cd /var/www/bedrock && composer install
 
@@ -52,6 +53,8 @@ cd /var/www/bedrock && curl -O https://raw.githubusercontent.com/wp-cli/builds/g
 php wp-cli.phar --info
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
+
+./vendor/wp-cli plugin list --path=wp --url=$HOME_URL/bedrock/wp
 
 #shows wordpress info
 wp -info
