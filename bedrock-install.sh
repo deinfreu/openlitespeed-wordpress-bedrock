@@ -5,8 +5,6 @@
 #Your ssh username
 USER="freudend"
 
-#--- PREPARE WORDPRESS ---
-
 #---START SCRIPT---
 
 #DONT ALTER it's for the script
