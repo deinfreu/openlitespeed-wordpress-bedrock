@@ -29,7 +29,7 @@ Todo:
 
 ### Installing
 
-:warning: ONLY USE THIS ON A DEVELOPMENT SERVER AND CHANGE THE SCRIPT TO FIT YOUR INSTALLATION.
+:warning: DON'T USE THIS SCRIPT IN A LIVE WEBSITE. ONLY USE THIS ON A DEVELOPMENT SERVER AND CHANGE THE SCRIPT TO FIT YOUR INSTALLATION.
 
 * Fork this repo
 * change to your variables in the bedrock-install.sh file and the .env file
