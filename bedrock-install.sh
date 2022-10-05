@@ -58,9 +58,7 @@ wp -info
 
 #--- END SCRIPT ---
 
-#Set owner back to www-data
+#Set owner back to www-data for security reasons
 sudo chown -R www-data /var/www
 sudo chown -R www-data /var/www/bedrock
 sudo chown -R www-data /usr/local/lsws/conf
-
-#--- END ---
